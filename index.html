@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+
+    <title>Dice Gaming</title>
+</head>
+
+<body>
+    <div id="dark-wrap" class="main">
+        <div class="wrapper clearfix">
+            <div class="player-0-panel active">
+                <div class="player-name" id="name-0">Player 1</div>
+                 <div class="player-name" id="name-0-new"></div>
+                <div class="player-score" id="score-0">43</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Score</div>
+                    <div class="player-current-score" id="current-0">11</div>
+                </div>
+            </div>
+
+            <div class="player-1-panel">
+                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-name" id="name-1-new"></div>
+                <div class="player-score" id="score-1">72</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Score</div>
+                    <div class="player-current-score" id="current-1">0</div>
+                </div>
+            </div>
+
+            <button class="btn-new">
+                <ion-icon name="logo-game-controller-b"></ion-icon>New game
+            </button>
+            <button class="btn-roll"><i class="ion-ios-play-circle"></i>Roll</button>
+            <button class="btn-hold"><i class="icon ion-md-alert"></i>Hold Dice</button>
+            
+
+            <!--             <div id="score-goal-box"><p>goal score:<span id="score-goal"></span></div>-->
+
+            <input type="text" placeholder="Goal Score" class="final-score">
+        </div>
+
+
+
+        
+            <div class="input-menu">
+            <form>
+                <label for="input-1" class="label">Player 1 name:</label>
+                <input id="input-1" class="player-1-name names" type="text" name="player-1-name" placeholder="Enter name" required="required" value="">
+                <label for="input-2" class="label">Player 2 name:</label>
+                <input id="input-2" class="player-2-name names" type="text" name="player-2-name" placeholder="Enter name" required="required" value="">
+                <p class="submit" onclick="submitInput()">Complete</p>
+            </form>
+        </div>
+
+        <!-- modal btn -->
+        <button type="button" id="info-box" data-toggle="modal" data-target="#myModal">
+            <ion-icon ios="ios-information-circle" md="md-information-circle"></ion-icon>Info
+        </button>
+
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Game Rules</h4>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="text">
+                            <li>The game has 2 players, playing in rounds</li>
+                            <li>A player rolls a dice as many times as he whishes. Each result get added to his score</li>
+                            <li>The player can choose to <strong>'Hold Dice'</strong>, which means that his score gets added to his dom. After that, it's the next player's turn</li>
+                            <li>If the player rolls a 1, all his
+                                score gets lost. After that, it's the next player's turn</li>
+                            <li>Player loses 40 points and turn if double 6 is rolled.</li>
+                            <li>First player to reach 100 point wins. They can set the winning goal score below.</li>
+                        </ul>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <!--            <div id="score-goal-box"><p><span id="score-goal"></span></div>-->
+
+        <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">
+        <img src="dice-5.png" alt="Dice" class="dice" id="dice-2">
+
+        <div id="roll-1-msg">Rolled double 1, total score lost</div>
+        <div id="roll-6-msg">Rolled double 6, total score reduced by 40 points</div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
